@@ -254,7 +254,7 @@ A human audits by reading and navigating:
 - Follow references to downstream cards (where was this output used?)
 - Spot-check specific entries — read the judge reasoning, evaluate whether the score makes sense
 
-**Human reader (first pass):** structured HTML, expandable sections, **clickable** references (card id → card, set → table, method → `.py`). YAML stays the source of truth.
+**Human reader (first pass):** structured HTML, expandable sections, **clickable full references** (card `id@version` → that card, named set → its table, method → `.py`). YAML stays the source of truth. If a reference cannot be clicked through to a real card or set, it is not a full reference.
 
 **Agent reader:** parse the YAML, expand counted globs, hash blobs, re-run methods. Integrity highlighting (hash fail, `n ≠ 80`) belongs here, not in the first human pass.
 
@@ -308,6 +308,12 @@ set; the scientific question stays on the experiment.
 When many artifacts share a role (eighty session tapes), describe a
 **set** (directory, glob, `n`). Edges point at the set. Placeholders and
 N copy-pasted edges both fail a skeptic.
+
+**Full references.** A card points at another card by **id** (and
+`@version` once claimed), or at a **named set** with glob and `n`. Not
+`D-<uuid>`. The human reader turns those ids into clickable links. The
+agent reader expands the set and checks the count. A placeholder cannot
+be hashed or opened.
 
 **Full writeup:** [`method-card.md`](method-card.md)
 

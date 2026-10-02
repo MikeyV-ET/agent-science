@@ -53,9 +53,11 @@ own the scientific question. That stays on the experiment card.
 ## Sets
 
 When many artifacts share a role (80 uuid tapes), describe a **set**:
-directory, glob, `n`. Edges point at the set. Placeholders (`D-<uuid>`)
-and N copy-pasted edges both fail a skeptic. An agent expands the glob
-and checks `n`.
+directory, glob, `n`. Edges point at the set by **that set's name**, or
+at a single card by **full id** (`M-h5-grade-from-tapes`,
+`sv46_34_1-E-sitting`). Placeholders (`D-<uuid>`) and N copy-pasted
+edges both fail a skeptic. An agent expands the glob and checks `n`.
+A human reader clicks the id through to the card.
 
 ## Relation to experiment cards
 
