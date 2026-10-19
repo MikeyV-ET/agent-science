@@ -28,6 +28,7 @@ Every card type is judged by that bar:
 | **Method** | Run the named map on a fixture and match the contract (not only hash the `.py`) |
 | **Experiment** | Re-run the recipe on this item set (or audit it) and check outputs |
 | **Hypothesis** | See the claim, the evidence ledger, and what would kill it |
+| **Finding** | See the assertion and the graph required to support it |
 | **Study** | See which cards and edges constitute the record (living card and/or snapshot) |
 
 If the answer is no, the card is incomplete — add pins, hashes, method steps, discriminators, or schema until a skeptic could act without trusting narrative.
@@ -317,6 +318,18 @@ be hashed or opened.
 
 **Full writeup:** [`method-card.md`](method-card.md)
 
+## Finding Cards
+
+A **finding** is a locked assertion plus the graph a skeptic needs to
+support it. It is not a lab-notebook recap and not a hypothesis still
+being bet.
+
+Hypothesis cards stay open: claim, ledger, what would kill it. Finding
+cards close: this is the assertion, these data/method/experiment cards
+are the support, this is what it is not to be confused with.
+
+**Full writeup:** [`finding-card.md`](finding-card.md)
+
 ## Versioning: Cards and Studies
 
 **Editing a card in place** destroys the recipe behind past results.
@@ -350,6 +363,8 @@ project/
     cards/
   hypotheses/
     cards/
+  findings/
+    cards/
   studies/
     cards/                  # Living study record (updated as cards accrue)
     snapshots/              # Optional frozen DAGs
@@ -358,6 +373,7 @@ project/
   method-card.md
   hypothesis-card.md
   data-card.md
+  finding-card.md
   versioning.md
 ```
 
@@ -374,11 +390,11 @@ The concept has been tested against three projects of different shapes:
 - **Sub-vocal desire detection** (multi-stage training: build → probe → preserve)
 - **Interleave GRPO** (batch measurement + training: curriculum across difficulty levels)
 
-The experiment card structure generalizes across all three. **Data cards** and **card/study versioning** were added as co-equal primitives (see `data-card.md`, `versioning.md`). **Method cards**, living **study** records, and minting data cards from a sitting you cannot rerun were added from SciCode-Verified 34.1 / grok-4.6 (see `method-card.md`). Implementation and tooling are next.
+The experiment card structure generalizes across all three. **Data cards** and **card/study versioning** were added as co-equal primitives (see `data-card.md`, `versioning.md`). **Method cards**, living **study** records, and minting data cards from a sitting you cannot rerun were added from SciCode-Verified 34.1 / grok-4.6 (see `method-card.md`). **Finding cards** (locked assertion + support graph) were added as a co-equal primitive (see `finding-card.md`). Implementation and tooling are next.
 
 ## Authors
 
 - **Eric Terry** — Concept, research direction
 - **MikeyV-Cinco** — Implementation, analysis
 - **MikeyV-Trip-G** — Data cards, versioning (card + study DAG)
-- **MikeyV-Squiggy** — Method cards; 34.1 grok-4.6 study record
+- **MikeyV-Squiggy** — Method cards; finding cards; 34.1 grok-4.6 study record

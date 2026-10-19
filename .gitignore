@@ -1,0 +1,10 @@
+# Project uses of this method live with those projects, not in this repo.
+cards/
+code/
+notebooks/
+outputs/
+reports/
+inputs/
+__pycache__/
+*.pyc
+.DS_Store
